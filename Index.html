@@ -1,10 +1,20 @@
 <!Doctype html>
 <html>
 
-	<h1>Skrrtt</h1>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+
+    <h1>Skrrtt</h1>
+</head>
 
 <body>
-	<p>sup</p>
+    <p>sup</p>
 
+
+    <div ng-app="">
+        <p>Name: <input type="text" ng-model="name"></p>
+        <p ng-bind="name"></p>
+    </div>
 </body>
-</html>	
+
+</html>
