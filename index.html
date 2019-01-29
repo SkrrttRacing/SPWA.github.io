@@ -6,7 +6,7 @@
     <link href="skrrtt.css" rel="stylesheet" type="text/css">
 	
 <script>
-	var client = new Messaging.Client(iot.eclipse.org, 1883, clientid);
+	var client = new Messaging.Client(test.mosquitto.org, 1883, spwa test);
 
 var options = {
 
@@ -24,12 +24,21 @@ var options = {
      }
 	</script>
 
+	
+	<script>client.subscribe("aaa/aaa", {qos: 2});</script>
  };
 
 //Attempt to connect
-client.connect(options);
+	<script>client.connect(options);</script>
 
     <h1>Skrrtt</h1>
+	
+	<script>
+	var message = new Messaging.Message(payload);
+message.destinationName = a;
+message.qos = qos;
+client.send(aaaa);
+	</script>
 </head>
 
 <body>
