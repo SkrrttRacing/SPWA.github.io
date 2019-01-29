@@ -22,14 +22,12 @@ var options = {
      onFailure: function (message) {
          alert("Connection failed: " + message.errorMessage);
      }
-	</script>
-
 	
-	<script>client.subscribe("aaa/aaa", {qos: 2});</script>
  };
 
 //Attempt to connect
-	<script>client.connect(options);</script>
+	<script>client.connect(options);
+	client.subscribe("aaa/aaa", {qos: 2});</script>
 
     <h1>Skrrtt</h1>
 	
