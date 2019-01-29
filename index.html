@@ -29,8 +29,8 @@ var options = {
 	<script>client.connect(options);
 		var message = new Messaging.Message("aaaaa");
 		message.destinationName = aaa/aaa;
-		message.qos = qos;
-		client.publish("iot_data", message);
+		message.qos = 2;
+		client.message(message);
 	client.subscribe("aaa/aaa", {qos: 2});</script>
 
     <h1>Skrrtt</h1>
