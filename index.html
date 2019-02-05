@@ -63,9 +63,23 @@ client.subscribe("aaa/aaa", {qos: 2});</script>
 	</p>
 	</div>
 	
-	<button type="button" onclick="publish('hh Brother !','hh',2);">
-		Click Me!
-	</button>
+	<div>
+		<button type="button" onclick="client.connect(options);">
+			Connect
+		</button>
+		
+		<button onclick="client.subscribe('testtopic/#', {qos: 2}); alert('Subscribed');">
+			Subscribe
+		</button>
+		
+		<button type="button" onclick="publish('hh Brother !','hh',2);">
+			Click Me!
+		</button>
+		
+		<button onclick="client.disconnect();">
+			Disconnect
+		</button>
+	</div>
 	
 	<div id ="CarSelect"> <!--Creates dop down menu for car select-->
 		<select id = "car"> 
