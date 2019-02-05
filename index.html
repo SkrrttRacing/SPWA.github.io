@@ -6,7 +6,7 @@
     <link href="skrrtt.css" rel="stylesheet" type="text/css">
 	
 <script>
-	var client = new Messaging.Client(test.mosquitto.org, 1883, spwatest);
+	var client = new Messaging.Client("test.mosquitto.org", 1883, "spwatest");
 
 var options = {
 
@@ -23,16 +23,32 @@ var options = {
          alert("Connection failed: " + message.errorMessage);
      }
 	
+};
+	
+     client.onConnectionLost = function (responseObject) {
+     //Depending on your scenario you could implement a reconnect logic here
+     alert("connection lost: " + responseObject.errorMessage);	
  };
+	
+     var publish = function (payload, topic, qos) {
+     //Send your message (also possible to serialize it as JSON or protobuf or just use a string, no limitations)
+     var message = new Messaging.Message(payload);
+     message.destinationName = topic;
+     message.qos = qos;
+     client.send(message);
+ }
+	
 </script>
+	
 <!--Attempt to connect-->
-	<script>client.connect(options);
-		var message = new Messaging.Message("aaaaa");
-		message.destinationName = aaa/aaa;
-		message.qos = 2;
-		client.message(message);
-	client.subscribe("aaa/aaa", {qos: 2});</script>
+<script>client.connect(options);
+	var message = new Messaging.Message(payload);
+	message.destinationName = hh;
+	message.qos = 2;
+	client.message(message);
+client.subscribe("aaa/aaa", {qos: 2});</script>
 
+	
     <h1>Skrrtt</h1>
 	
 	
@@ -47,7 +63,7 @@ var options = {
 	</p>
 	</div>
 	
-	<button type="button" onclick="">
+	<button type="button" onclick="publish('hh Brother !','hh',2);">
 		Click Me!
 	</button>
 	
