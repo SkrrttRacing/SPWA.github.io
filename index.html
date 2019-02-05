@@ -71,7 +71,7 @@ var options = {
 			Connect
 		</button>
 		
-		<button onclick="client.subscribe('testUUID/gameState', {qos: 2}); alert('Subscribed');">
+		<button type="button" onclick="client.subscribe('testUUID/gameState', {qos: 2}); alert('Subscribed');">
 			Subscribe
 		</button>
 		
@@ -79,7 +79,7 @@ var options = {
 			Click Me!
 		</button>
 		
-		<button onclick="client.disconnect();">
+		<button type="button" onclick="client.disconnect();">
 			Disconnect
 		</button>
 		
