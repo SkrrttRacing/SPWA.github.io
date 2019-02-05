@@ -64,11 +64,11 @@ client.subscribe("hh", {qos: 2});</script>
 			Connect
 		</button>
 		
-		<button onclick="client.subscribe('testtopic/#', {qos: 2}); alert('Subscribed');">
+		<button onclick="client.subscribe('testUUID/gameState#', {qos: 2}); alert('Subscribed');">
 			Subscribe
 		</button>
 		
-		<button type="button" onclick="publish('hh Brother !','hh',2);">
+		<button type="button" onclick="publish('hello !','testUUID/gameState',2);">
 			Click Me!
 		</button>
 		
