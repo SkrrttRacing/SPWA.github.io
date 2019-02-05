@@ -6,7 +6,7 @@
     <link href="skrrtt.css" rel="stylesheet" type="text/css">
 	
 <script>
-	var client = new Messaging.Client("test.mosquitto.org", 1883, "spwatest");
+	var client = new Messaging.Client("broker.hivemq.com", 8000, "spwatest");
 
 var options = {
 
@@ -39,10 +39,6 @@ var options = {
  }
 	
 </script>
-	
-<!--Attempt to connect-->
-<script>client.connect(options);
-client.subscribe("hh", {qos: 2});</script>
 
 	
     <h1>Skrrtt</h1>
@@ -64,7 +60,7 @@ client.subscribe("hh", {qos: 2});</script>
 			Connect
 		</button>
 		
-		<button onclick="client.subscribe('testUUID/gameState#', {qos: 2}); alert('Subscribed');">
+		<button onclick="client.subscribe('testUUID/gameState', {qos: 2}); alert('Subscribed');">
 			Subscribe
 		</button>
 		
