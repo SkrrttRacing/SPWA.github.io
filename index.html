@@ -8,6 +8,16 @@
 <script>
 	var client = new Messaging.Client("broker.hivemq.com", 8000, "spwatest");
 
+	client.onConnectionLost = function (responseObject) {
+     //Depending on your scenario you could implement a reconnect logic here
+     alert("connection lost: " + responseObject.errorMessage);	
+ };
+	
+	client.onMessageArrived = function (message) {
+     //Do something with the push message you received
+     $('#messages').append('<span>Topic: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
+ };
+	
 var options = {
 
      //connection attempt timeout in seconds
@@ -24,11 +34,6 @@ var options = {
      }
 	
 };
-	
-     client.onConnectionLost = function (responseObject) {
-     //Depending on your scenario you could implement a reconnect logic here
-     alert("connection lost: " + responseObject.errorMessage);	
- };
 	
      var publish = function (payload, topic, qos) {
      //Send your message (also possible to serialize it as JSON or protobuf or just use a string, no limitations)
