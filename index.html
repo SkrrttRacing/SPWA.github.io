@@ -6,6 +6,9 @@
     <link href="skrrtt.css" rel="stylesheet" type="text/css">
 	
 <script>
+	
+	//
+	
 	var client = new Messaging.Client("broker.hivemq.com", 8000, "spwatest");
 
 	client.onConnectionLost = function (responseObject) {
@@ -61,7 +64,10 @@ var options = {
 	</div>
 	
 	<div>
-		<button type="button" onclick="client.connect(options);">
+		<button type="button" onclick="<script>
+					       client.connect(options);
+					       </script>
+					       ">
 			Connect
 		</button>
 		
