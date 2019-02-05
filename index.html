@@ -42,11 +42,7 @@ var options = {
 	
 <!--Attempt to connect-->
 <script>client.connect(options);
-	var message = new Messaging.Message(payload);
-	message.destinationName = hh;
-	message.qos = 2;
-	client.message(message);
-client.subscribe("aaa/aaa", {qos: 2});</script>
+client.subscribe("hh", {qos: 2});</script>
 
 	
     <h1>Skrrtt</h1>
